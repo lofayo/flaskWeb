@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}upload{% endblock %}
+
+{% block content %}
+  {% if request.method == 'GET' and message %}
+    <h3>{{message}}</h3>
+    <form action="/upload" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+      <input type="file" name="file" value="" placeholder="">
+      <input type="submit" name="" value="upload" placeholder="">
+    </form>
+  {% endif %}
+  {% if request.method == 'POST' and message %}
+    <h3>{{message}}</h3>
+  {% endif %}
+{% endblock %}

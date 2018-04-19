@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}Please Sign In {% endblock%}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        p,form {
+            text-align: center;
+        }
+        .content {
+            background: pink;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    {% if message %}
+        <p style="color:red">{{ message }}</p>
+    {% endif %}
+
+    <form action="/signin" method="get" enctype="multipart/form-data">
+        <legend>Please sign in:</legend>
+        <p>
+            <input name="username" placeholder="Username" value="{{ username }}">
+        </p>
+        <p>
+            <input name="password" placeholder="Password" type="password">
+        </p>
+        <p>
+            <input type="file" name="file">
+        </p>
+        <p>
+            <button type="submit">Sign In</button>
+        </p>
+    </form>
+{% endblock %}

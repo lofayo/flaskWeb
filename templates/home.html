@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+{{super()}}
+<style type="text/css">
+  .content {
+    background: green;
+  }
+</style>
+{% endblock %}
+
+
+{% block content %}
+  <h1 style="font-style:italic">Home</h1>
+  <p>继承了统一的布局模板，只需要子模板在对应位置填入内容即可！！</p>
+{% endblock %}
